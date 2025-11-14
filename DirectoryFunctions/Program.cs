@@ -11,7 +11,6 @@ namespace DiretorioCRUD
             bool rodando = true;
             Pasta pasta = new Pasta();
 
-
             while (rodando == true)
             {
                 Console.WriteLine("Escolha uma opção:");
@@ -24,14 +23,16 @@ namespace DiretorioCRUD
 
                 string input = (Console.ReadLine()); // variavel - escolha da ação
 
-                if(!int.TryParse(input, out int escolha))
+                if(!int.TryParse(input, out int escolha) || escolha < 0 || escolha > 4)
                 {
                     Console.WriteLine("Digite um valor valido 0-4 por favor");
+                    Console.Write("Aperte qualquer tecla para voltar...");
+                    Console.ReadKey();
                     Console.Clear();
                     continue;
                 }
 
-                switch (escolha - 1)
+                switch (escolha)
                 {
                     case 0:
                         rodando = false;

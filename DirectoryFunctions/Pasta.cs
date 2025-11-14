@@ -37,14 +37,14 @@ namespace DiretorioCRUD
             if (!int.TryParse(input, out int escolha) || escolha < 1 || escolha > caminhosBase.Count)
             {
                 Console.WriteLine("Digite um valor valido (" + 1 + "-" + caminhosBase.Count + ") por favor");
-                Console.Write("Aperte enter...");
-                Console.ReadLine();
+                Console.Write("Aperte qualquer tecla para voltar...");
+                Console.ReadKey();
                 Console.Clear();
                 return;
             }
 
 
-            string caminhoEscolhido = caminhosBase[escolha];
+            string caminhoEscolhido = caminhosBase[escolha - 1];
 
 
             Console.WriteLine("Digite o nome da pasta ou (v/voltar) para voltar: ");
